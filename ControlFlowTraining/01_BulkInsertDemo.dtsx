@@ -11,10 +11,32 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{0D4D1F2B-CA69-4004-B40F-27BB924C33EF}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{01A33CDD-F079-4F5A-99D6-ACAC0F0ACFA6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Employees.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{55BD0312-135C-441E-8A5E-3B73647424D8}"
+      DTS:ObjectName="Employees.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Kali\Desktop\Concordia\Co-op\Co-op\Work Term\2020F\Genetec - BI Software Developer\Tutorials\Udemy-Mastering SSIS 2016-Part 1\Exercises\SSISDemoFiles\Employees.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.AdventureWorks2014]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{036C48E4-6A9B-44BB-B89C-873AAA555E6D}"
+      DTS:ObjectName="LocalHost.AdventureWorks2014">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=AdventureWorks2014;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -27,7 +49,14 @@
       DTS:ObjectName="Bulk Insert Task"
       DTS:ThreadHint="0">
       <DTS:Variables />
-      <DTS:ObjectData />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData
+          BulkInsertTask:SourceConnectionName="{55BD0312-135C-441E-8A5E-3B73647424D8}"
+          BulkInsertTask:DestinationConnectionName="{036C48E4-6A9B-44BB-B89C-873AAA555E6D}"
+          BulkInsertTask:DestinationTableName="[dbo].[Employees]"
+          BulkInsertTask:FirstRow="2"
+          BulkInsertTask:FieldTerminator="Comma {,}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>

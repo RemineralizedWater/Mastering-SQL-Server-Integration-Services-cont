@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/9/2020 4:34:36 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KALI"
+  DTS:CreatorName="KALI\Kali"
+  DTS:DTSID="{ECC316CD-3A27-42D9-99BB-4C9A96754646}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionGUID="{461E32E4-C206-4946-9E05-291502AC540A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+</DTS:Executable>
