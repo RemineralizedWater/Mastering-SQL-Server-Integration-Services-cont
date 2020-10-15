@@ -11,15 +11,15 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{CC08F0DA-64D8-4E92-94C5-C4B4AEE72C98}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{0FDCDEDC-ADF8-4DAB-85EA-BC2456296870}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[.]"
       DTS:CreationName="SMOServer"
-      DTS:DTSID="{061B1FA9-647F-4024-974A-DDFE6FC0668B}"
+      DTS:DTSID="{D793DD08-D3CB-4865-8508-A56F91FE0729}"
       DTS:ObjectName=".">
       <DTS:ObjectData>
         <SMOServerConnectionManager
@@ -28,13 +28,13 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[.\sql2016]"
+      DTS:refId="Package.ConnectionManagers[.\NEW_INSTANCE]"
       DTS:CreationName="SMOServer"
-      DTS:DTSID="{B38A6F92-EACA-4E18-AF09-1624C99AA42A}"
-      DTS:ObjectName=".\sql2016">
+      DTS:DTSID="{7A5D46FA-CE04-42CD-854C-E8E3C3161D91}"
+      DTS:ObjectName=".\NEW_INSTANCE">
       <DTS:ObjectData>
         <SMOServerConnectionManager
-          ConnectionString="SqlServerName=.\sql2016;UseWindowsAuthentication=True;UserName=;"
+          ConnectionString="SqlServerName=.\NEW_INSTANCE;UseWindowsAuthentication=True;UserName=;"
           ConnectByProxy="False" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -45,7 +45,7 @@
       DTS:refId="Package\Transfer Database Task"
       DTS:CreationName="Microsoft.TransferDatabaseTask"
       DTS:Description="Transfer Database Task"
-      DTS:DTSID="{FC2F5797-A42F-479E-B954-7461434CD8E5}"
+      DTS:DTSID="{2773BA34-3D15-4A83-8727-B501FA90AF77}"
       DTS:ExecutableType="Microsoft.TransferDatabaseTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Transfer Database Task"
@@ -54,9 +54,13 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <TransferDatabasesTaskData
-          SrcConn="{B38A6F92-EACA-4E18-AF09-1624C99AA42A}"
-          DestConn="{061B1FA9-647F-4024-974A-DDFE6FC0668B}"
+          SrcConn="{7A5D46FA-CE04-42CD-854C-E8E3C3161D91}"
+          DestConn="{D793DD08-D3CB-4865-8508-A56F91FE0729}"
           Method="1"
+          SrcDBName="Demo"
+          SrcDBFiles="&quot;Demo.mdf&quot;,&quot;C:\Program Files\Microsoft SQL Server\MSSQL15.NEW_INSTANCE\MSSQL\DATA&quot;,&quot;&quot;;&quot;Demo_log.ldf&quot;,&quot;C:\Program Files\Microsoft SQL Server\MSSQL15.NEW_INSTANCE\MSSQL\DATA&quot;,&quot;&quot;"
+          DestDBName="Demo"
+          DestDBFiles="&quot;Demo.mdf&quot;,&quot;K:\Databases&quot;,&quot;&quot;;&quot;Demo_log.ldf&quot;,&quot;K:\Databases&quot;,&quot;&quot;"
           DestOverwrite="True" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -76,7 +80,7 @@
         <NodeLayout
           Size="192,42.6666666666667"
           Id="Package\Transfer Database Task"
-          TopLeft="138.124997941777,54.5999990236759" />
+          TopLeft="86.8749987054616,42.8999992328882" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

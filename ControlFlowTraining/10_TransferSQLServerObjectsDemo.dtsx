@@ -11,10 +11,34 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="10_TransferSQLServerObjectsDemo"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{5725529A-FED8-4EB3-8ED5-C3C8F948B788}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{75E6AB39-E931-496A-BDC3-6A3C1BC6D4F7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{1C0CAB85-9791-4D68-A600-330784985B42}"
+      DTS:ObjectName=".">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=.;UseWindowsAuthentication=True;UserName=;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\new_instance]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{628806DF-AF26-4806-B393-3ED6FC191A32}"
+      DTS:ObjectName=".\new_instance">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=.\new_instance;UseWindowsAuthentication=True;UserName=;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -28,7 +52,15 @@
       DTS:TaskContact="Transfer Objects Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
-      <DTS:ObjectData />
+      <DTS:ObjectData>
+        <TransferSqlServerObjectsTaskData
+          SourceConnection="{628806DF-AF26-4806-B393-3ED6FC191A32}"
+          DestinationConnection="{1C0CAB85-9791-4D68-A600-330784985B42}"
+          SourceDatabase="Demo"
+          DestinationDatabase="Demo"
+          TablesList="1,11,[dbo].[Emp],"
+          CopyData="True" />
+      </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
